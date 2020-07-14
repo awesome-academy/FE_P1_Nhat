@@ -1,0 +1,78 @@
+mixin nav__menu(link)
+  case link
+    when 'Trang chủ'
+      li.menu__list
+        a(class="active menu__list--link" href='#')= link
+    when 'Sản phẩm'
+      li.menu__list
+        a(class="menu__list--link" href='#') Sản phẩm
+          i.fa.fa-caret-down
+        ul.menu__sub
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm 1
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm 2
+    when 'Sản phẩm mới'
+      li.menu__list
+        a(class="menu__list--link" href='#') Sản phẩm mới
+          i.fa.fa-caret-down
+        ul.menu__sub
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm mới 1
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm mới 2
+    default
+      li.menu__list
+        a(class="menu__list--link" href='#')= link
+//- nav__menu
+
+mixin widget__list(h3,links)
+  .widget__col
+    h3.widget__title= h3
+    ul.widget__list
+      each link in links 
+        +widget__link(link)
+mixin widget__link(link)
+  li.widget__list--link
+    a(href='#')= link
+//- widget__link
+
+mixin widget__menu(link)
+  a(href='#' class="widget__menu--link")= link
+//- widget__menu
+
+mixin widget__detail--contact(icon)
+  ul.widget__detail--contact
+    li Điện thoại : (84-4) 66.558.868 
+    li Email: info@dkt.com.vn
+//- widget__detail--contact
+
+mixin items__product(img,sale,sl,h3,p_old,p_current)
+  .product__box
+    .product__img
+      img(src=`images/product/${img}.jpg` alt='images')
+      span(class=`product__label--${sale}`)= sl
+      .product__overlay
+      .product__link
+        a(href="#" class="product__link--buynow") mua ngay
+        a(href="#" class="product__link--preview")
+          i.fa.fa-search
+    .product__content
+      h3.product__content--name
+        a(href="#")= h3
+      .product__content--evaluate
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star-half-o(aria-hidden='true')
+      .product__content--price
+        ins
+          span.product__content--price-old= p_old
+        del
+          span.product__content--price-current= p_current
+//- product
+
+mixin title(h1)
+  title= h1
+//- title

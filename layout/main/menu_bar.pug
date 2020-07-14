@@ -1,0 +1,13 @@
+.menubar
+  .container
+    .menu__wrap
+      .menu__mobile
+        a(href="#")
+         i.fa.fa-bars
+      nav.menu__nav
+        ul.menu
+          each link in ['Trang chủ','Giới thiệu','Sản phẩm','Sản phẩm mới','Tin tức','Liên hệ']
+            +nav__menu(link)
+
+
+

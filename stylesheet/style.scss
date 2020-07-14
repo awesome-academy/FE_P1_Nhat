@@ -1,0 +1,426 @@
+@import 'info';
+@import 'shortcodes';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900');
+@import url('font.css');
+@import url('font-awesome.css');
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* topbar
+-------------------------------------------------------------- */
+.topbar {
+  background-color: #202020;
+  &__inner {
+    @include flex;
+  }
+  &__post-time span {
+    color: #636363;
+    font-family: 'Arial';
+    &.time {
+      margin-right: 20px;
+      position: relative;
+      padding-left: 20px;
+    }
+    &.time:after {
+      content: '\f017';
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      position: absolute;
+      font-family: 'fontawesome';
+    }
+  }
+  &__list-social {
+    margin-left: 30px;
+    border-left: 1px solid #2b2b2b;
+    a {
+      font-size: 11px;
+      color: #636363;
+      width: 32px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      display: inline-block;
+      border-right: 1px solid #2b2b2b;
+      &:hover {
+        color: $cl_m;
+      }
+    }
+  }
+  &__left {
+    @include flex;
+  }
+  &__right {
+    @include icon;
+    a {
+      font-size: 12px;
+      color: #636363;
+      padding: 8px 10px;
+      position: relative;
+      &:hover {
+        color: $cl_m;
+      }
+    }
+  }
+}
+
+/* header
+-------------------------------------------------------------- */
+.header {
+  padding: 30px 0;
+  background-image: url('../images/header/01.jpg');
+  background-size: cover;
+  background-position: center;
+  &__flex {
+    @include flex();
+  }
+  &__logo {
+    width: 50%;
+  }
+  &__content {
+    width: 35%;
+    &--support {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-left: 20px;
+      font-family: $font_s;
+      position: relative;
+      margin-left: 20px;
+      &:after {
+        content: '\f095';
+        top: 50%;
+        left: 0;
+        font-size: 18px;
+        transform: translateY(-50%); 
+        position: absolute;
+        font-family: 'fontawesome';
+      }
+    }
+  }
+  &__search {
+    position: relative;
+    margin-top: 10px;
+    input {
+      border-radius: 36px;
+      padding: 0 60px 0 15px;
+    }
+    button {
+      width: 52px;
+      height: 36px;
+      margin: 2px 0;
+      padding: 0;
+      top: 0;
+      right: 0;
+      position: absolute;
+      background: unset;
+      color: #898989;
+      border-left: 1px solid #ebebeb;
+    }
+  }
+  &__cart {
+    width: 15%;
+    margin-left: 25px;
+    text-align: right;
+    &--amount {
+      color: #000;
+      font-size: 15px;
+      padding-left: 20px;
+    }
+  }
+}
+
+/* menubar
+-------------------------------------------------------------- */
+.menubar {
+  background-color: #3fb871;
+}
+.menu {
+  &__wrap {
+    @include flex($justify:normal);
+  }
+  &__mobile a {
+    color: $cl_white;
+    font-size: 22px;
+    margin-right: 35px;
+  }
+  &__list {
+    display: inline-block;
+    position: relative;
+    &:hover .menu__sub {
+      opacity: 1;
+      z-index: 1;
+      top: 100%;
+      visibility: visible;
+      @extend.trans;
+    }
+    &:hover i {
+      transform: rotate(180deg);
+    }
+    a {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    &--link {
+      color: $cl_white;
+      display: inline-block;
+      position: relative;
+      padding: 15px 20px 16px 19px;
+      &:hover,
+      &.active {
+        color: $cl_white;
+        background-color: #36a66d;
+      }
+      i {
+        @extend.trans;
+        margin-left: 10px;
+      }
+    }
+  }
+  &__sub {
+    width: 220px;
+    opacity: 0;
+    z-index: 999;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 5px;
+    top: 150%;
+    left: 0;
+    visibility: hidden;
+    @extend.trans;
+    @include b_shadow;
+    &--list {
+      margin: 0 20px;
+      border-bottom: 1px solid rgba(16, 32, 57, 0.1);
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &--link {
+      line-height: 45px;
+      &.active,
+      &:hover {
+        color: $cl_green;
+      }
+    }
+  }
+}
+
+/* slider
+-------------------------------------------------------------- */
+.slider {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden; 
+  text-align: center;
+  padding: 200px 0 210px 0;
+  &__inner {
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    bottom: 30px;
+    position: absolute;
+    label {
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 50%;
+      margin: 0 4px;
+      @extend .trans;
+      &:hover,
+      &.active {
+        background: $cl_m;
+      }
+    }
+  }
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  background-size: cover;
+  transition: left 0s .75s;
+  &__one {
+    background-image: url("../images/slide/01.png");
+  }
+  &__two {
+    background-image: url("../images/slide/01.png");
+  }
+  &__three {
+    background-image: url("../images/slide/01.png");
+  }
+}
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+@each $no in 1,2,3 {
+  input[id="slide-dot#{$no}"]:checked ~ .slider__inner label[for="slide-dot#{$no}"] {
+    background: $cl_m;
+  }
+}
+
+/* footer
+-------------------------------------------------------------- */
+.footer {
+  background-color: #313131;
+}
+.widget {
+  &__first {
+    padding: 30px 0;
+    border-bottom: 1px solid #494949;
+    &--wrap {
+      @include d-grid(1fr 1fr 1fr);
+    }
+  }
+  &__intro {
+    p {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    &--social a {
+      font-size: 16px;
+      color: #898989;
+      margin-right: 15px;
+      &:hover {
+        color: $cl_m;
+      }
+    }
+  }
+  &__second {
+    padding: 50px 0;
+    border-bottom: 1px solid #494949;
+  }
+  &__detail {
+    &--flex {
+      @include flex($justify: normal,$align: normal);
+    }
+    &.left {
+      width: 28%;
+    }
+    &.right {
+      width: 72%;
+      padding-left: 50px;
+    }
+    &--logo {
+      margin: -15px 0 15px 0;
+    }
+    &--des {
+      margin-bottom: 1rem;
+    }
+    &--contact {
+      li {
+        position: relative;
+        margin-bottom: 0.5rem;
+      }
+      @include icon__footer;
+    }
+    &--wrap {
+      @include d-grid(1fr 1fr 1fr 1fr);
+    }
+
+  }
+  &__logo {
+    margin: -10px 0 15px 0;
+  }
+  &__des {
+    margin-bottom: 1rem;
+  }
+  &__search {
+    .form-subcribe {
+      position: relative;
+    }
+    input {
+      height: 46px;
+      padding: 0 65px 0 15px;
+    }
+    .btn-subcribe {
+      top: 0;
+      right: 0;
+      padding: 15px 17px 14px 17px;
+      position: absolute;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $cl_m;
+    margin-bottom: 1.5rem;
+  }
+  &__list {
+    &--link {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #b7b7b7;
+      font-size: 12px;
+      padding-left: 10px;
+      position: relative;
+      &:after {
+        content: '\f105';
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%); 
+        position: absolute;
+        font-family: 'fontawesome'; 
+      }
+      &:hover {
+        color: $cl_m;
+        margin-left: 5px;
+      }
+    }
+  }
+  &__thrid {
+    padding: 20px 0;
+    &--flex {
+      @include flex($justify: space-between,$align: normal);
+    }
+  }
+  &__menu {
+    &--link {
+      font-size: 12px;
+      color: #b7b7b7;
+      margin-right: 20px;
+    }
+  }
+}
+.bottom {
+  text-align: center;
+  background-color: #434343;
+  padding: 10px 0;
+  p {
+    font-size: 14px;
+    color: $cl_white;
+  }
+}
+
+/* footer
+-------------------------------------------------------------- */
+.feature_s1 {
+  padding: 100px 0 50px 0;
+}
+.feature {
+  &__columns {
+    @include d-grid(1fr 1fr);
+    &--right {
+      @include d-grid(1fr 1fr);
+    }
+  }
+}
