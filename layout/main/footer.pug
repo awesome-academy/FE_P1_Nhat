@@ -1,0 +1,51 @@
+footer.footer
+  .widget__first
+    .container
+      .widget__first--wrap
+        .widget__intro
+          p Kênh thông tin từ chúng tôi:
+          .widget__intro--social
+            a(href='#')
+              i.fa.fa-facebook
+            a(href='#')
+              i.fa.fa-twitter
+            a(href='#')
+              i.fa.fa-instagram
+            a(href='#')
+              i.fa.fa-vimeo
+        .widget__intro
+          p Đăng ký nhận email từ chúng tôi
+        .widget__search
+          form(action='#' method='post' class='form-subcribe')
+              input(type='text' name='email')
+              button(class='btn-subcribe' name='subcribe')
+                i.fa.fa-paper-plane
+  .widget__second
+    .container
+      .widget__detail--flex
+        .widget__detail.left
+          .widget__detail--logo
+            a(href="index.html" title="Logo")
+              img(src="images/logo/01.png")
+          p.widget__detail--des Green shop được thành lập từ 8/2010 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng ngày một phát triển 
+          ul.widget__detail--contact
+            li.icon__footer-mobile Điện thoại : (84-4) 66.558.868 
+            li.icon__footer-envelope Email: info@dkt.com.vn
+        .widget__detail.right
+          .widget__detail--wrap
+            +widget__list('Thông tin khách hàng',['Tài khoản của tôi','Sản phẩm yêu thích','Lịch sử mua hàng','Chính sách đổi trả','Góp ý ,khiếu nại'])
+            +widget__list('Hỗ trợ dịch vụ',['Hệ thống cửa hàng','Hướng dẫn mua hàng','Hướng dẫn thanh toán','Tích điểm đổi quà','Câu hỏi thường gặp'])
+            +widget__list('Chính sách ưu đãi',['Chính sách giao hàng','Chính sách đổi trả sản phẩm','Chính sách bảo hành ','Giới thiệu sản phẩm mới','Chính sách trả góp'])
+            +widget__list('Tin tức',['Tin mới','Khuyến mại','Tuyển dụng','Download','Tags'])
+  .widget__thrid
+    .container
+      .widget__thrid--flex
+        .widget__menu
+          each link in ['Sitemap','Danh mục sản phẩm ','Hợp tác','Thông tin liên hệ','Câu hỏi thường gặp']
+            +widget__menu(link)
+        .widget__payment
+          img(src="images/footer/01.png")
+  .bottom
+    .container
+      p Thiết kế bởi Bizweb
+

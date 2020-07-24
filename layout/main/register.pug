@@ -1,0 +1,49 @@
+.register
+  .container
+    form.register__form(action='#')
+      .register__top
+        h2.title__head Thông tin cá nhân
+        .register__columns
+          .register__left 
+            fieldset.form__group
+              label Họ và tên
+                span.required *
+              input(type='text')
+            fieldset.form__group
+              label Địa chỉ email
+                span.required *
+              input(type='text')
+          .register__right
+            fieldset.form__group
+              label Số ĐT
+                span.required *
+              input(type='text')
+            fieldset.form__group
+              label Website của bạn
+                span.required *
+              input(type='text')
+        .checkbox
+            input#cbx.checkbox__inp(type='checkbox')
+            label.checkbox__custom(for='cbx')
+              span.checkbox__custom--tick
+                svg(width='8px' height='6px' viewbox='0 0 12 10')
+                  polyline(points='1.5 6 4.5 9 10.5 1')
+              span.checkbox__custom--text Ghi nhớ tài khoản
+            a(href="#") Bạn quên mật khẩu ?
+      .register__bottom
+        h2.title__head Thông tin tài khoản
+        .register__columns
+          .register__left 
+            fieldset.form__group
+              label Mật khẩu
+                span.required *
+              input(type='text')
+          .register__right
+            fieldset.form__group
+              label Nhập lại mật khẩu
+                span.required *
+              input(type='text')
+      .register__btn
+        button.btn__common quay lại
+        button.btn__common đăng kí
+    

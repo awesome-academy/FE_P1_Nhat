@@ -1,0 +1,35 @@
+/* bestsale
+-------------------------------------------------------------- */
+.bestsale {
+  padding-bottom: 40px;
+  &__columns {
+    @include flex($justify: normal,$align: normal);
+    @include res("md") {
+      display: unset;
+    }
+  }
+  &__left {
+    width: 23.1%;
+    @include res("md") {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+  &__right {
+    width: 76.9%;
+    padding-left: 30px;
+    @include res("md") {
+      width: 100%;
+      padding-left: 0;
+    }
+    &--columns {
+      @include d-grid(1fr 1fr 1fr);
+      @include res("md") {
+        @include d-grid(1fr 1fr);
+      }
+      @include res("xs") {
+        @include d-grid(1fr);
+      }
+    }
+  }
+}
