@@ -1,0 +1,59 @@
+/* catalog
+-------------------------------------------------------------- */
+.catalog {
+  &__top {
+    @include flex;
+    margin-bottom: 2rem;
+    @include res("xs") {
+      display: unset;
+    }
+  }
+  &__view-mode {
+    @include res("xs") {
+      margin-bottom: 40px;
+    }
+    a {
+      color: #afafaf;
+      margin-right: 10px;
+    }
+    a.active,
+    a:hover {
+      color: $cl_m;
+    }
+  }
+  &__right {
+    display: flex;
+    @include res("xs") {
+      display: unset;
+    }
+  }
+  &__filter {
+    @include flex($justify:normal);
+    margin-left: 40px;
+    label {
+      font-size: 14px;
+      color: #363636;
+      margin-right: 1rem;
+    }
+    @include res("xs") {
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+  }
+  &__option {
+    &--orderby {
+      height: 40px;
+      cursor: pointer;
+      font-size: 13px;
+      -webkit-appearance: none;
+      background: url(../images/custom-select/01.png) no-repeat;
+      background-size: 8px;
+      background-position: calc(100% - 10px) center;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      color: #898989;
+      padding: 0 27px 0px 20px;
+      border: 1px solid #cccccc;
+    }
+  }
+}
