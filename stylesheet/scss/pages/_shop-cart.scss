@@ -1,0 +1,154 @@
+/* shop-cart
+-------------------------------------------------------------- */
+.shop-cart {
+  padding-bottom: 215px;
+}
+.cart {
+  &__form {
+    margin-bottom: 50px;
+  }
+  &__table {
+    width: 100%;
+    margin-bottom: 44px;
+    td,th {
+      padding: 17px;
+      border: 1px solid #ebebeb;
+      @include res("sm") {
+        padding: 10px;
+      }
+    }
+    td {
+      @include res("sm") {
+        border: none;
+      }
+    }
+  }
+  &__columns {
+    @include res("sm") {
+      display: none;
+    }
+    tr th {
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      text-transform: uppercase;
+      background-color: #3fb871;
+      padding: 16px 15px 15px 15px;
+    }
+  }
+  &__product {
+    tr {
+      text-align: center;
+      @include res("sm") {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        border: 1px solid #ebebeb;
+      }
+      td {
+        @include res("sm") {
+          @include flex;
+          border-bottom: 1px solid #ebebeb;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        &:before {
+        @include res("sm") {
+          content: attr(data-title)"";
+          float: left;
+          color: #102039;
+          font-size: 14px;
+          text-transform: uppercase;
+          }
+        }
+      }
+    }
+    &--img {
+      width: 12%;
+      padding: 17px;
+      text-align: center;
+      @include res("sm") { 
+        width: 100%;
+      }
+      &:before {
+        @include res("sm") { 
+          display: none;
+        }
+      }
+    }
+    &--name {
+      a {
+        font-size: 18px;
+        line-height: 1.5;
+        color: $cl_m;
+        text-transform: uppercase;
+        @include res("sm") { 
+          font-size: 14px;
+        }
+      }
+    }
+    &--price {
+      .unit-amount {
+        font-size: 18px;
+      }
+    }
+    &--quantity {
+      input {
+        width: 44px;
+        height: 44px;
+        margin: 0 auto;
+        padding: 0 4px;
+        text-align: center;
+      }
+      .input-counter {
+        font-size: 18px;
+      }
+    }
+    &--total {
+      .subtotal-amount {
+        font-size: 18px;
+      }
+    }
+    &--remove {
+      a {
+        color: #898989;
+      }
+    }
+  }
+  &__btn {
+    text-align: right;
+    button {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &__pay {
+    table {
+      @include flex($justify:flex-end);
+      margin-bottom: 44px;
+    }
+    td {
+      padding: 36px 50px 35px 50px;
+      @include res("xs") {
+        padding: 15px;
+      }
+      border: 1px solid #ebebeb;
+    }
+    tr td {
+      font-size: 14px;
+      font-weight: 700;
+      color: $cl_m;
+      text-transform: uppercase;
+      &:first-child {
+        width: 50%;
+      }
+    }
+    &--background {
+      background-color: $cl_m;
+      td {
+        color: $cl_white !important;
+      }
+    }
+  }
+}
