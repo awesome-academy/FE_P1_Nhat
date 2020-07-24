@@ -1,0 +1,22 @@
+/* pagination
+-------------------------------------------------------------- */
+.pagination {
+  text-align: right;
+  li {
+    display: inline-block;
+    a {
+      display: inline-block;
+      font-size: 14px;
+      color: #898989;
+      border: 1px solid #e1e1e1;
+      padding: 12px 17px 13px 18px;
+      margin: 0 0 10px 10px;
+      margin-left: 10px;
+      background-color: $cl_white;
+      &:hover {
+        color: $cl_white;
+        background-color: $cl_m;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+doctype html
+html  
+  head
+    include mixin/mixin.pug
+    block title
+      +title('Green Shop')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel='stylesheet' href='stylesheet/reset.css')
+    link(rel='stylesheet' href='stylesheet/style.css')
+  body
+    block topbar
+      include main/topbar.pug
+    block header
+      include main/header.pug
+    block menu
+      include main/menu-bar.pug
+    block main
+    block footer
+      include main/footer.pug
+            
+

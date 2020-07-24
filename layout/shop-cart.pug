@@ -1,0 +1,8 @@
+extends layout.pug
+block title
+  +title('Green Shop | Cart')  
+block menu
+  include main/menu-bar.pug
+block main
+  +breadcrumb('Giỏ hàng')
+  include main/shop-cart.pug
