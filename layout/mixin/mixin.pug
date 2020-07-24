@@ -1,0 +1,236 @@
+mixin title(h1)
+  title= h1
+//- title
+
+mixin breadcrumb(link)
+  .breadcrumb
+    .container
+      ul.breadcrumb__inner
+        li
+          a(href="index.html") Home
+        li
+          a(href="#")= link
+//- breadcrumb
+
+mixin nav__menu(link)
+  case link
+    when 'Trang chủ'
+      li.menu__list
+        a(class="active menu__list--link" href='#')= link
+    when 'Sản phẩm'
+      li.menu__list
+        a(class="menu__list--link" href='#') Sản phẩm
+          i.fa.fa-caret-down
+        ul.menu__sub
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm 1
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm 2
+    when 'Sản phẩm mới'
+      li.menu__list
+        a(class="menu__list--link" href='#') Sản phẩm mới
+          i.fa.fa-caret-down
+        ul.menu__sub
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm mới 1
+          li.menu__sub--list
+            a(class="menu__sub--link" href='#') Sản phẩm mới 2
+    default
+      li.menu__list
+        a(class="menu__list--link" href='#')= link
+//- nav__menu
+
+mixin widget__list(h3,links)
+  .widget__col
+    h3.widget__title= h3
+    ul.widget__list
+      each link in links 
+        +widget__link(link)
+mixin widget__link(link)
+  li.widget__list--link
+    a(href='#')= link
+//- widget__link
+
+mixin widget__menu(link)
+  a(href='#' class="widget__menu--link")= link
+//- widget__menu
+
+mixin widget__detail--contact(icon)
+  ul.widget__detail--contact
+    li Điện thoại : (84-4) 66.558.868 
+    li Email: info@dkt.com.vn
+//- widget__detail--contact
+
+mixin product-grid(img,sale,sl,h3,p_old,p_current)
+  .product-grid__box
+    .product-grid__img
+      a(href="#")
+        img(src=`images/product/${img}.png` alt='images')
+      span(class=`product-grid__label--${sale}`)= sl
+      .product-grid__overlay
+      .product-grid__link
+        a(href="#" class="btn__common") mua ngay
+        a(href="#" class="btn__search")
+          i.fa.fa-search
+    .product-grid__content
+      h3.product-grid__name
+        a(href="#")= h3
+      .product-grid__evaluate
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star-half-o(aria-hidden='true')
+      .product-grid__price
+        span.old-price= p_old
+        span.new-price= p_current
+//- product-grid
+
+mixin product-bal(img,h3,p_current)
+  .product-bal__box
+    .product-bal__img
+      a(href="#")
+        img(src=`images/product/${img}.png` alt='images')
+    .product-bal__content
+      h3.product-bal__name
+        a(href="#")= h3
+      .product-bal__evaluate
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star-half-o(aria-hidden='true')
+      .product-bal__price
+        span.current-price= p_current
+//- product-bal
+
+mixin product-list(img,h3,des,p_current)
+  .product-list__box
+    .product-list__img
+      a(href="#")
+        img(src=`images/product/${img}.png` alt='images')
+    .product-list__content
+      h3.product-list__name
+        a(href="#")= h3
+      .product-list__evaluate
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+        i.fa.fa-star(aria-hidden='true')
+      p= des
+      .product-list__price
+        span.current-price= p_current
+      .product-list__btn
+        a(href="#" class="btn__common") mua ngay
+        a(href="#" class="btn__search") 
+          i.fa.fa-search
+        a(href="#" class="btn__favourite")
+          i.fa.fa-heart
+//- product-list
+
+mixin blog-grid(img,time,h3,des)
+  article.blog-grid__box 
+    .blog-grid__img
+      a(href="#")
+        img(src=`images/blog/${img}.jpg` alt='images')
+    .blog-grid__content
+      span.blog-grid__time=time
+      h3.blog-grid__title
+        a(href="#")=h3
+      p= des
+      .blog-grid__read-more
+        a(href="#") Đọc tiếp
+//- blog-grid
+
+mixin blog(h3,date,time,comment,img,des)
+  article.blog
+    .blog__title
+      a(href='#')= h3
+    ul.blog__post
+      li.blog__post--date
+        span
+          i.fa.fa-calendar-minus-o
+        a(href='#')= date
+      li.blog__post--time
+        span
+          i.fa.fa-clock-o
+        a(href='#')= time
+      li.blog__post--comment
+        span
+          i.fa.fa-commenting-o
+        a(href='#')= comment
+    .blog__img
+      a(href='#')
+        img(src=`images/blog/${img}.jpg` alt='images')
+    p= des
+//- blog
+
+mixin category__product(link)
+  li
+    a(href="#" class="category__product--link")= link
+//- category__product
+
+mixin category__color(color,name)
+  .category__list-color
+    span(class=`category__list-color--bg bg-${color}`)
+    a(href="#" class="category__list-color--name")= name
+//- category__color
+
+mixin category__article(img,h4)
+  li
+    .category__article
+      .category__article--img
+        img(src=`images/product/${img}.png` alt='images')
+      h4.category__article--title
+        a(href="#")= h4
+//- category__article
+
+mixin category__tag(tag)
+  a(href="#")= tag
+//- category__tag
+
+mixin catalog__orderby(option)
+  option(value='popularity' selected='selected')= option
+//- catalog__orderby
+
+mixin pagination(link)
+  li
+    a(href="#")= link
+//- pagination
+
+mixin product-details(link)
+  li
+    a(href="#")= link
+//- product-details
+
+mixin cart__body(img,name,initial,qty)
+  tr
+    td.cart__product--img(data-title='hình ảnh')
+      a(href='#')
+        img(src=`images/product/${img}.png` alt='images')
+    td.cart__product--name(data-title='tên sản phẩm')
+      a(href='#')= name
+    td.cart__product--price(data-title='đơn giá')
+      span.unit-amount= `${initial}.000 đ`
+    td.cart__product--quantity(data-title='số lượng')
+      span.input-counter= qty
+    td.cart__product--total(data-title='thành tiền')
+      span.subtotal-amount= `${initial*qty}.000 đ`
+    td.cart__product--remove(data-title='xóa')
+      a(href='#')
+        i.fa.fa.fa-trash
+//- cart__body
+
+mixin comment(img,name,des,time)
+  .comment-box
+    .comment-box__avatar
+      img(src=`images/blog/${img}.jpg` alt='images')
+    .comment-box__content
+      h3.comment-box__content--name= name
+      p.description= des
+      .comment-box__content--time
+        span.time= time
+      .comment-box__content--reply
+        a(href='#') Trả lời
+//- comment
