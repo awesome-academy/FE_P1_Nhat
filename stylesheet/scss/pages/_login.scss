@@ -1,0 +1,18 @@
+/* login
+-------------------------------------------------------------- */ 
+.login {
+  padding-bottom: 100px;
+  &__columns {
+    @include d-grid(1fr 1fr);
+    @include res("sm") {
+      @include d-grid(1fr);
+      grid-gap: 0;
+    }
+  }
+  &__left {
+    margin-bottom: 50px;
+  }
+  &__btn {
+    margin-top: 30px;
+  }
+}
