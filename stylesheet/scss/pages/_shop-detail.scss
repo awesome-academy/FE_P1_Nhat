@@ -1,0 +1,115 @@
+/* product-detail
+-------------------------------------------------------------- */
+.shop-detail {
+  margin-bottom: 80px;
+}
+.product-detail {
+  @include d-grid(1fr 1fr);
+  @include res("md") {
+    @include d-grid(1fr);
+  }
+  &__img {
+    &--main {
+      margin-bottom: 30px;
+    }
+    &--grid {
+      @include d-grid(1fr 1fr 1fr 1fr 1fr);
+      @include res("xs") {
+        @include d-grid(1fr 1fr 1fr);
+      }
+    }
+  }
+  &__title {
+    font-size: 18px;
+    color: #363533;
+    font-family: $font_s;
+    margin-bottom: 15px;
+  }
+  &__evaluate {
+    margin-bottom: 20px;
+    i {
+      color: #febf01;
+      font-size: 14px;
+      letter-spacing: 4px;
+    }
+  }
+  &__price {
+    span {
+      margin: 0 5px;
+    }
+    .old-price {
+      font-size: 18px;
+      color: #ed1c24;
+      font-family: $font_s;
+    }
+    .new-price {
+      font-size: 14px;
+      color: #959595;
+      text-decoration: line-through;
+    }
+  }
+  p {
+    padding: 20px 0;
+    margin-top: 15px;
+    border-top: 1px solid #e1e1e1;
+  }
+  &__btn {
+    margin-bottom: 30px;
+    a {
+      margin-left: 10px;
+    }
+  }
+}
+.list3 {
+  &__common {
+    li {
+      display: inline-block;
+      margin: 0 20px 20px 0;
+      .list {
+        display: flex;
+      }
+      .list-1 {
+        padding: 2px 8px;
+        display: inline-block;
+        border-radius: 2px;
+        i {
+          margin-right: 4px;
+          color: $cl_white;
+        }
+        a {
+          font-size: 12px;
+          color: $cl_white;
+        }
+      }
+      .list-1a {
+        background-color: #5772cb;
+      }
+      .list-1b {
+        background-color: #1a96de;
+      }
+      .list-1c {
+        background-color: #fe6e4c;
+      }
+      .tag {
+        border: 1px solid #e1e1e1;
+        padding: 2px 8px;
+        margin-left: 10px;
+        position: relative;
+        border-radius: 2px;
+        &:before {
+          content: "";
+          top: 6px;
+          left: -5px;
+          z-index: 0;
+          width: 9px;
+          height: 9px;
+          position: absolute;
+          background: #ffffff;
+          transform: rotate(-45deg);
+          border-top: 1px solid #e1e1e1;
+          border-left: 1px solid #e1e1e1;
+        }
+      }
+    }
+  }
+}
