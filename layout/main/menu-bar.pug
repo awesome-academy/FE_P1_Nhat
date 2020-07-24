@@ -1,0 +1,23 @@
+.menubar
+  .container
+    .menu__flex
+      .menu__inner
+        .menu__mobile
+          a(href="#")
+           i.fa.fa-bars
+        nav.menu__nav
+          ul.menu
+            each link in ['Trang chủ','Giới thiệu','Sản phẩm','Sản phẩm mới','Tin tức','Liên hệ']
+              +nav__menu(link)
+      .mobile__header
+        .mobile__search
+          a(href="#")
+            i.fa.fa-search
+          .mobile__search-form
+            form(action='#' method="post")
+              input(placeholder='Gõ tìm kiếm ...' type='text')
+              button(type='search' class='btn-search')
+                i.fa.fa-search
+        .mobile__cart
+          a(href="#")
+            i.fa.fa-shopping-basket
