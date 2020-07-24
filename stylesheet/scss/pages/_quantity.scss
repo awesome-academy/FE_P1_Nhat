@@ -1,0 +1,35 @@
+/* quantity
+-------------------------------------------------------------- */
+.quantity {
+  &__form {
+    padding-top: 20px;
+    border-top: 1px solid #e1e1e1;
+  }
+  &__inner {
+    margin-bottom: 20px;
+  }
+  &__number-product {
+    display: inline-block;
+    vertical-align: middle;
+    .btn-num {
+      font-size: 14px;
+      border: solid 1px #eaebf3;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      float: left;
+      color: #8d90a6;
+      text-align: center;
+      padding: 0px;
+    }
+    input {
+      float: left;
+      color: #8d90a6;
+      font-size: 14px;
+      width: 60px;
+      height: 40px;
+      text-align: center;
+      margin: 0px 5px;
+    }
+  }
+}
