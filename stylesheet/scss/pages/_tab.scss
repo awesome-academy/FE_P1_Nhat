@@ -1,0 +1,91 @@
+/* tab
+-------------------------------------------------------------- */
+.tab {
+  position: relative;
+  margin-bottom: 60px;
+  input {
+    z-index: 1000;
+    height: 40px;
+    left: -100px;
+    top: 0px;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    &:checked + label {
+      background: #fff;
+      z-index: 6;
+      border-top: 3px solid #7d7d7d;
+      @include res("xs") {
+        z-index: 9999;
+        color: $cl_m;
+      }
+    }
+    &.tab__selector-1:checked ~ .tab__content .tab__content-1,
+    &.tab__selector-2:checked ~ .tab__content .tab__content-2,
+    &.tab__selector-3:checked ~ .tab__content .tab__content-3 {
+      z-index: 100;
+      display: unset;
+      @extend.trans;
+    }
+  }
+  label {
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    padding: 0 20px;
+    float: left;
+    display: block;
+    color: #385c5b;
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    @include res("xs") {
+      float: unset;
+    }
+    &:after {
+      content: '';
+      background: #fff;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      display: block;
+    }
+    &:first-of-type {
+      z-index: 4;
+    }
+  }
+  &__clear-shadow {
+    clear: both;
+  }
+  &__label-2 {
+    z-index: 3;
+  }
+  &__label-3 {
+    z-index: 2;
+  }
+  &__content {
+    background: #fff;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    border: 1px solid #e1e1e1;
+    padding: 40px 15px 40px 40px;
+    @include res("sm") {
+      padding: 30px 15px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    div {
+      z-index: 1;
+      display: none;
+      @extend.trans;
+    }
+  }
+}
