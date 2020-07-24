@@ -1,0 +1,33 @@
+.shop-cart
+  .container
+    h2.title__head Giỏ hàng
+    form.cart__form(action='#')
+      table.cart__table
+        thead.cart__columns
+          tr
+            th.cart__columns--img hình ảnh
+            th.cart__columns--name tên sản phẩm
+            th.cart__columns--price đơn giá
+            th.cart__columns--quatity số lượng
+            th.cart__columns--total thành tiền
+            th.cart__columns--remove xóa
+        tbody.cart__product
+          +cart__body('15','cây văn phòng',270,1)
+          +cart__body('15','cây văn phòng',270,2)
+          +cart__body('15','cây văn phòng',270,3)
+      .cart__btn
+        button.btn__common hủy đơn hàng
+        button.btn__common tiếp tục mua
+    form.cart__pay(action='#')  
+      table
+        tr
+          td tổng tền (chưa thuế)
+          td 270.000 đ
+        tr
+          td thuế (vat 10%)
+          td 27.000 đ
+        tr.cart__pay--background
+          td Tổng phải thanh toán
+          td 297.000 đ
+      .cart__btn
+        button.btn__common thanh toán
