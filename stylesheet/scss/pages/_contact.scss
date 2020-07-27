@@ -1,0 +1,47 @@
+/* contact
+-------------------------------------------------------------- */ 
+.contact {
+  padding-bottom: 100px;
+  &__map {
+    margin-bottom: 50px;
+  }
+  &__columns {
+    @include d-grid(1fr 1fr);
+    @include res("sm") {
+      @include d-grid(1fr);
+    }
+  }
+}
+.w-comment {
+  &__top {
+    display: flex;
+    margin-bottom: 30px;
+    @include res("sm") {
+      display: unset;
+    }
+    &--input {
+      flex-grow: 1;
+      margin-right: 30px;
+      @include res("sm") {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      input {
+        font-size: 12px;
+      }
+    }
+  }
+  &__bottom {
+    margin-bottom: 30px;
+    textarea {
+      font-size: 12px;
+      height: 146px;
+    }
+  }
+  &__btn {
+    text-align: right;
+  }
+}
